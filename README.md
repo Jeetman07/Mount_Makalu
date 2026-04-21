@@ -1,16 +1,99 @@
-# React + Vite
+# 🎨 Frontend UI – Agriculture Support System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 👨‍💻 Developed by
 
-Currently, two official plugins are available:
+** Amar kathayat**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📌 Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This branch contains the frontend implementation of the Agriculture Support System.
+The UI is built using React (Vite) and focuses on providing a clean and user-friendly interface for farmers, experts and admins.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Features Implemented
+
+### 🔐 Authentication 
+
+* Login page
+* Register page
+
+### 🏠 Home Page
+
+* Landing page with system introduction
+* Navigation to dashboard
+
+### 👨‍🌾 Farmer Dashboard
+
+* View submitted crop problems
+* Status indicators (Pending / Solved)
+
+### 📋 Problem Management
+
+* Problem listing page
+* Problem details view
+* Upload problem form UI
+
+### 🌦️ Weather Section
+
+* Weather UI component (static / mock data)
+
+### 💡 Tips Section
+
+* Agricultural tips UI
+
+### 👨‍💼 Admin & Expert Dashboards
+
+* Admin dashboard UI
+* Expert dashboard UI
+
+---
+
+## 🛠️ Tech Stack
+
+* React (Vite)
+* JavaScript (JSX)
+* CSS
+
+---
+
+## 📂 Folder Structure
+
+```
+src/
+ ├── components/
+ ├── pages/
+ ├── data/
+ ├── App.jsx
+ ├── main.jsx
+```
+
+---
+
+## ⚙️ How to Run
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+## 📈 Current Status
+
+✅ UI design completed
+✅ Multiple pages implemented
+✅ Navigation and layout working
+⏳ Backend integration pending
+
+---
+
+## 📌 Notes
+
+* This branch focuses only on frontend UI development
+* Data is currently static / mock-based
+* Will be connected to backend APIs in next phase
+
+---
