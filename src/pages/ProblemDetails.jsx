@@ -1,43 +1,40 @@
-import { useParams } from 'react-router-dom'
-import { mockProblems, mockResponses } from '../data/mockData'
-import ResponseCard from '../components/ResponseCard'
+import { useParams } from "react-router-dom";
+import { mockProblems, mockResponses } from "../data/mockData";
 
-const ProblemDetails = () => {
-  const { id } = useParams()
+function ProblemDetails() {
+  const { id } = useParams();
 
-  const problem = mockProblems.find((item) => item.id === Number(id))
-  const responses = mockResponses.filter((item) => item.problemId === Number(id))
+  const problem = mockProblems.find(
+    (item) => String(item.id) === String(id)
+  );
+
+  const responses = mockResponses.filter(
+    (item) => String(item.problemId) === String(id)
+  );
 
   if (!problem) {
-    return <div className="dashboard-container"><h1>Problem Not Found</h1></div>
+    return <div>Problem not found.</div>;
   }
 
   return (
-    <div className="dashboard-container">
-      <div className="page-box">
-        <h1>📄 {problem.title}</h1>
-        <p>{problem.description}</p>
-        <p><strong>Status:</strong> {problem.status}</p>
-      </div>
+    <div className="page-container">
+      <h1>{problem.title}</h1>
+      <p>{problem.description}</p>
+      <p>Status: {problem.status}</p>
 
-      <section>
-        <h2>💬 Responses</h2>
-        <div className="card-grid">
-          {responses.map((response) => (
-            <ResponseCard key={response.id} response={response} />
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2>✍️ Add Response</h2>
-        <form className="form">
-          <textarea placeholder="Write your response"></textarea>
-          <button type="submit">Send Response</button>
-        </form>
-      </section>
+      <h2>Responses</h2>
+      {responses.length === 0 ? (
+        <p>No responses yet.</p>
+      ) : (
+        responses.map((response) => (
+          <div key={response.id} className="problem-card">
+            <p><strong>{response.author}</strong></p>
+            <p>{response.message}</p>
+          </div>
+        ))
+      )}
     </div>
-  )
+  );
 }
 
-export default ProblemDetails
+export default ProblemDetails;

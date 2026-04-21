@@ -7,8 +7,6 @@ import FarmerDashboard from './pages/FarmerDashboard'
 import ExpertDashboard from './pages/ExpertDashboard'
 import AdminDashboard from './pages/AdminDashboard'
 import Problems from './pages/Problems'
-import Weather from './pages/Weather'
-import Tips from './pages/Tips'
 import UploadProblem from './pages/UploadProblem'
 import ProblemDetails from './pages/ProblemDetails'
 
@@ -25,8 +23,6 @@ function App() {
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/problems" element={<Problems />} />
         <Route path="/problems/:id" element={<ProblemDetails />} />
-        <Route path="/weather" element={<Weather />} />
-        <Route path="/tips" element={<Tips />} />
         <Route path="/upload-problem" element={<UploadProblem />} />
       </Routes>
     </>
