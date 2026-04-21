@@ -1,36 +1,36 @@
-# 🎨 Frontend (UI Development) – Agriculture Support System
+#  Frontend (UI Development) – Agriculture Support System
 
-## 👨‍💻 Developed by
+##  Developed by
 
 ** Amar kathayat**
 
 ---
 
-## 📌 Overview
+## Overview
 
 This branch contains the frontend implementation of the Agriculture Support System.
 The UI is built using React (Vite) and focuses on providing a clean and user-friendly interface for farmers, experts and admins.
 
 ---
 
-## 🚀 Features Implemented
+##  Features Implemented
 
-### 🔐 Authentication 
+###  Authentication 
 
 * Login page
 * Register page
 
-### 🏠 Home Page
+###  Home Page
 
 * Landing page with system introduction
 * Navigation to dashboard
 
-### 👨‍🌾 Farmer Dashboard
+###  Farmer Dashboard
 
 * View submitted crop problems
 * Status indicators (Pending / Solved)
 
-### 📋 Problem Management
+###  Problem Management
 
 * Problem listing page
 * Problem details view
@@ -59,7 +59,7 @@ The UI is built using React (Vite) and focuses on providing a clean and user-fri
 
 ---
 
-## 📂 Folder Structure
+##  Folder Structure
 
 ```
 src/
@@ -72,7 +72,7 @@ src/
 
 ---
 
-## ⚙️ How to Run
+##  How to Run
 
 ```bash
 npm install
@@ -81,7 +81,7 @@ npm run dev
 
 ---
 
-## 📈 Current Status
+##  Current Status
 
 ✅ UI design completed
 ✅ Multiple pages implemented
