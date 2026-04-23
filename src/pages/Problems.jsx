@@ -1,59 +1,50 @@
-import { useEffect, useState } from "react";
-import { fetchProblems } from "../services/api";
+import { useEffect, useState } from "react"
+import axios from "axios"
+import "./Problems.css"
 
-function Problems() {
-  const [problems, setProblems] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+const Problems = () => {
+  const [problems, setProblems] = useState([])
 
   useEffect(() => {
-    async function loadProblems() {
-      try {
-        const data = await fetchProblems();
-        setProblems(data);
-      } catch (err) {
-        setError("Could not load problems");
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    loadProblems();
-  }, []);
-
-  if (loading) return <p>Loading problems...</p>;
-  if (error) return <p>{error}</p>;
+    axios
+      .get("http://127.0.0.1:5000/problems")
+      .then((res) => setProblems(res.data))
+      .catch((err) => console.log(err))
+  }, [])
 
   return (
-    <div className="page-container">
-      <h1>All Crop Problems</h1>
+    <div className="problems-container">
+      <h1 className="page-title">🌾 All Crop Problems</h1>
 
-      {problems.length === 0 ? (
-        <p>No problems found.</p>
-      ) : (
-        problems.map((problem, index) => (
-          <div key={problem.problem_id || index} className="problem-card">
-            <h3>{problem.title || "No title"}</h3>
-            <p>{problem.description || "No description"}</p>
-            <p>Status: {problem.status || "pending"}</p>
-
+      <div className="problems-grid">
+        {problems.map((problem) => (
+          <div key={problem.problem_id} className="problem-card">
             {problem.image_url && (
               <img
                 src={`http://127.0.0.1:5000${problem.image_url}`}
-                alt={problem.title || "Problem image"}
-                style={{
-                  width: "200px",
-                  marginTop: "10px",
-                  borderRadius: "8px",
-                  display: "block",
-                }}
+                alt="problem"
+                className="problem-image"
               />
             )}
+
+            <div className="card-content">
+              <h3>{problem.title || "No title"}</h3>
+
+              <p>{problem.description || "No description available"}</p>
+
+              <span className={`status ${problem.status}`}>
+                {problem.status}
+              </span>
+
+              <button className="view-btn">
+                View Details →
+              </button>
+            </div>
           </div>
-        ))
-      )}
+        ))}
+      </div>
     </div>
-  );
+  )
 }
 
-export default Problems;
+export default Problems
