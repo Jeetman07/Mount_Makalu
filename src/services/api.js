@@ -12,6 +12,7 @@ export async function fetchProblems() {
 
 export async function addProblem(problemData) {
   const formData = new FormData();
+
   formData.append("title", problemData.title);
   formData.append("description", problemData.description);
   formData.append("farmer_id", problemData.farmer_id || "");
@@ -24,6 +25,32 @@ export async function addProblem(problemData) {
 
   if (!response.ok) {
     throw new Error("Failed to add problem");
+  }
+
+  return response.json();
+}
+
+export async function fetchProblemDetails(id) {
+  const response = await fetch(`${BASE_URL}/problems/${id}`);
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch problem details");
+  }
+
+  return response.json();
+}
+
+export async function addResponse(responseData) {
+  const response = await fetch(`${BASE_URL}/respond`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(responseData),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to submit response");
   }
 
   return response.json();

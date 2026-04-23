@@ -368,6 +368,24 @@ button:hover {
   font-weight: bold;
 }
 
+.view-btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background: #2e7d32;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.view-btn:hover {
+  background: #1b5e20;
+}
+
 @media (max-width: 768px) {
   .navbar {
     padding: 16px 18px;

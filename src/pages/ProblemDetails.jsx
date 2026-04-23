@@ -1,40 +1,66 @@
-import { useParams } from "react-router-dom";
-import { mockProblems, mockResponses } from "../data/mockData";
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import { fetchProblemDetails } from "../services/api"
+import "./ProblemDetails.css"
 
-function ProblemDetails() {
-  const { id } = useParams();
+const ProblemDetails = () => {
+  const { id } = useParams()
+  const [problem, setProblem] = useState(null)
+  const [responses, setResponses] = useState([])
+  const [loading, setLoading] = useState(true)
 
-  const problem = mockProblems.find(
-    (item) => String(item.id) === String(id)
-  );
+  useEffect(() => {
+    fetchProblemDetails(id)
+      .then((data) => {
+        setProblem(data.problem)
+        setResponses(data.responses || [])
+      })
+      .catch(() => {})
+      .finally(() => setLoading(false))
+  }, [id])
 
-  const responses = mockResponses.filter(
-    (item) => String(item.problemId) === String(id)
-  );
-
-  if (!problem) {
-    return <div>Problem not found.</div>;
-  }
+  if (loading) return <p className="center-text">Loading...</p>
+  if (!problem) return <p className="center-text">Problem not found</p>
 
   return (
-    <div className="page-container">
-      <h1>{problem.title}</h1>
-      <p>{problem.description}</p>
-      <p>Status: {problem.status}</p>
+    <div className="details-container">
 
-      <h2>Responses</h2>
-      {responses.length === 0 ? (
-        <p>No responses yet.</p>
-      ) : (
-        responses.map((response) => (
-          <div key={response.id} className="problem-card">
-            <p><strong>{response.author}</strong></p>
-            <p>{response.message}</p>
-          </div>
-        ))
-      )}
+      <div className="details-card">
+        <h1>{problem.title}</h1>
+
+        <p className="description">
+          {problem.description}
+        </p>
+
+        <span className={`status ${problem.status}`}>
+          {problem.status}
+        </span>
+
+        {problem.image_url && (
+          <img
+            src={`http://127.0.0.1:5000${problem.image_url}`}
+            alt="problem"
+          />
+        )}
+      </div>
+
+      <div className="responses-section">
+        <h2>Responses</h2>
+
+        {responses.length === 0 ? (
+          <p className="no-response">No responses yet.</p>
+        ) : (
+          responses.map((res) => (
+            <div key={res.response_id} className="response-card">
+              <h4>{res.responder_name || "Expert"}</h4>
+              <p>{res.message}</p>
+            </div>
+          ))
+        )}
+      </div>
+
     </div>
-  );
+  )
 }
 
-export default ProblemDetails;
+export default ProblemDetails

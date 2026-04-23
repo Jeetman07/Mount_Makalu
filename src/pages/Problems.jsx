@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import { Link } from "react-router-dom"
 import "./Problems.css"
 
 const Problems = () => {
@@ -19,6 +20,7 @@ const Problems = () => {
       <div className="problems-grid">
         {problems.map((problem) => (
           <div key={problem.problem_id} className="problem-card">
+            
             {problem.image_url && (
               <img
                 src={`http://127.0.0.1:5000${problem.image_url}`}
@@ -36,9 +38,13 @@ const Problems = () => {
                 {problem.status}
               </span>
 
-              <button className="view-btn">
+              <Link
+                to={`/problems/${problem.problem_id}`}
+                className="view-btn"
+              >
                 View Details →
-              </button>
+              </Link>
+
             </div>
           </div>
         ))}
