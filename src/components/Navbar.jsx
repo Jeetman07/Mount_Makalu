@@ -1,17 +1,32 @@
-import { Link, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { Link, useNavigate } from "react-router-dom"
 
 const Navbar = () => {
-  const [role, setRole] = useState('farmer')
   const navigate = useNavigate()
+  const user = JSON.parse(localStorage.getItem("user"))
 
-  const handleRoleChange = (e) => {
-    const selectedRole = e.target.value
-    setRole(selectedRole)
+  const handleLogout = () => {
+    localStorage.removeItem("user")
+    navigate("/login")
+  }
 
-    if (selectedRole === 'farmer') navigate('/farmer')
-    if (selectedRole === 'expert') navigate('/expert')
-    if (selectedRole === 'admin') navigate('/admin')
+  const roleMenus = {
+    farmer: [
+      { name: "Dashboard", path: "/farmer" },
+      { name: "Problems", path: "/problems" },
+      { name: "Weather", path: "/weather" },
+      { name: "Tips", path: "/tips" },
+      { name: "Upload", path: "/upload-problem" },
+    ],
+    expert: [
+      { name: "Dashboard", path: "/expert" },
+      { name: "Problems", path: "/problems" },
+    ],
+    admin: [
+      { name: "Dashboard", path: "/admin" },
+      { name: "Problems", path: "/problems" },
+      { name: "Weather", path: "/weather" },
+      { name: "Tips", path: "/tips" },
+    ],
   }
 
   return (
@@ -20,38 +35,27 @@ const Navbar = () => {
 
       <div className="nav-links">
         <Link to="/">Home</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
 
-        <select value={role} onChange={handleRoleChange}>
-          <option value="farmer">Farmer</option>
-          <option value="expert">Expert</option>
-          <option value="admin">Admin</option>
-        </select>
-
-        {role === 'farmer' && (
+        {!user && (
           <>
-            <Link to="/farmer">Dashboard</Link>
-            <Link to="/problems">Problems</Link>
-            <Link to="/weather">Weather</Link>
-            <Link to="/tips">Tips</Link>
-            <Link to="/upload-problem">Upload</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
           </>
         )}
 
-        {role === 'expert' && (
+        {user && (
           <>
-            <Link to="/expert">Dashboard</Link>
-            <Link to="/problems">Problems</Link>
-          </>
-        )}
+            <span style={{ color: "white", fontWeight: "600" }}>
+              {user.name}
+            </span>
 
-        {role === 'admin' && (
-          <>
-            <Link to="/admin">Dashboard</Link>
-            <Link to="/problems">Problems</Link>
-            <Link to="/weather">Weather</Link>
-            <Link to="/tips">Tips</Link>
+            {roleMenus[user.role]?.map((item, index) => (
+              <Link key={index} to={item.path}>
+                {item.name}
+              </Link>
+            ))}
+
+            <button onClick={handleLogout}>Logout</button>
           </>
         )}
       </div>

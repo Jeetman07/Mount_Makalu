@@ -1,6 +1,25 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from "react-router-dom"
 
 const Home = () => {
+  const navigate = useNavigate()
+
+  const handleDashboard = () => {
+    const user = JSON.parse(localStorage.getItem("user"))
+
+    if (!user) {
+      navigate("/login")
+      return
+    }
+
+    if (user.role === "farmer") {
+      navigate("/farmer")
+    } else if (user.role === "expert") {
+      navigate("/expert")
+    } else if (user.role === "admin") {
+      navigate("/admin")
+    }
+  }
+
   return (
     <div className="hero">
       <div className="hero-content">
@@ -11,8 +30,16 @@ const Home = () => {
         </p>
 
         <div className="hero-buttons">
-          <Link to="/register" className="hero-btn primary-btn">Get Started</Link>
-          <Link to="/farmer" className="hero-btn secondary-btn">View Dashboard</Link>
+          <Link to="/register" className="hero-btn primary-btn">
+            Get Started
+          </Link>
+
+          <button
+            onClick={handleDashboard}
+            className="hero-btn secondary-btn"
+          >
+            View Dashboard
+          </button>
         </div>
       </div>
     </div>
