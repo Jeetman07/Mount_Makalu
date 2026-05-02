@@ -1,358 +1,147 @@
 🌾 Agriculture Support System – Frontend (UI Development)
-👨‍💻 Developed by: Amar Kathayat
+👨‍💻 Developed by
+
+Amar Kathayat
 
 📌 Project Overview
 
-The Agriculture Support System is a web-based platform designed to support farmers by allowing them to:
+The Agriculture Support System is a web-based platform designed to help farmers by allowing them to:
 
 Submit crop-related problems
 Receive responses from experts or admins
 View weather updates
 Access useful agricultural tips
 
-This repository contains the frontend implementation of the system, developed using React (Vite).
-
-The frontend provides a user-friendly interface, supports role-based access, and is fully integrated with backend APIs.
+This repository contains the frontend implementation, built using React (Vite), with full API integration and role-based functionality.
 
 🎯 Purpose of Frontend
-
-The goal of the frontend is to:
-
-Provide an intuitive UI for different users (Farmer, Expert, Admin)
+Provide a clean and user-friendly interface
+Support multiple user roles (Farmer, Expert, Admin)
 Display real-time data from backend APIs
-Enable smooth interaction between users and the system
-Ensure responsive and professional design
-👥 User Roles & Access
-Role	Access Features
+Enable smooth interaction between users
+👥 User Roles
+Role	Features
 Farmer	Upload problems, view own problems, check weather, view tips
 Expert	View problems, respond to farmers
 Admin	Manage problems, add tips, add weather
-
 🚀 Features Implemented
-🔐 1. Authentication System
-
-
-User login with role selection
-
-
-User registration with OTP verification (backend connected)
-
-
+🔐 Authentication
+Login with role selection
+Register with OTP verification
 Forgot password UI
-
-
-Session management using localStorage
-
-
-Role-based redirection after login
-
-
-
-🔒 2. Protected Routes
-
-
-Implemented using ProtectedRoute.jsx
-
-
-Restricts access based on user role
-
-
-Prevents unauthorized access to dashboards
-
-
-
-🏠 3. Home Page
-
-
-Landing page with system introduction
-
-
-Navigation buttons:
-
-
-Get Started → Register
-
-
-View Dashboard → Role-based dashboard
-
-
-
-
-Dynamic behavior based on login status
-
-
-
-👨‍🌾 4. Farmer Dashboard
-
-
-View only own submitted problems
-
-
-Problem status indicators:
-
-
-Pending
-
-
-Solved
-
-
-
-
+Local storage session management
+🔒 Protected Routes
+Role-based access using ProtectedRoute
+Unauthorized users redirected automatically
+🏠 Home Page
+Landing page with system overview
+Dynamic navigation
+Dashboard redirection based on role
+👨‍🌾 Farmer Dashboard
+View own submitted problems
+Status tracking (Pending / Solved)
 Weather section (API-based)
-
-
 Tips section (API-based)
-
-
-Upload problem navigation
-
-
-
-👨‍🔬 5. Expert Dashboard
-
-
-View all crop problems
-
-
-Respond to farmer problems
-
-
-Status automatically updates to “Solved”
-
-
-Dashboard statistics:
-
-
-Total Problems
-
-
-Pending
-
-
-Solved
-
-
-
-
-
-👨‍💼 6. Admin Dashboard
-
-
-Full system control panel
-
-
-Features:
-
-
-Add crop tips
-
-
-Add weather data
-
-
+Upload problem feature
+👨‍🔬 Expert Dashboard
 View all problems
-
-
-
-
-Dashboard statistics:
-
-
-Problems count
-
-
-Weather count
-
-
-Tips count
-
-
-
-
-
-📋 7. Problem Management System
-
-
-View all problems page
-
-
+Respond to problems
+Status auto-updated to “Solved”
+Dashboard statistics
+👨‍💼 Admin Dashboard
+Add crop tips
+Add weather data
+View all problems
+System statistics
+📋 Problem Management
+View all problems
 Search functionality
-
-
-Filter by status (Pending / Solved)
-
-
-Clickable cards (full card navigation)
-
-
+Filter by status
+Clickable cards
 Problem details page
-
-
-Response submission system
-
-
-
-📄 8. Problem Details Page
-
-
-View full problem information
-
-
-Display responses from experts/admins
-
-
-Show "No responses yet" if empty
-
-
-Submit response form (Expert/Admin)
-
-
-
-🌦️ 9. Weather System
-
-
+Response system
+📄 Problem Details Page
+Full problem info
+Show responses
+“No responses yet” message
+Submit response form
+🌦️ Weather System
 Fetch weather data from backend
-
-
-Display weather by location
-
-
-Admin can add weather entries
-
-
-
-💡 10. Tips System
-
-
+View by location
+Admin can add weather
+💡 Tips System
 Fetch tips from backend
-
-
-Display agricultural tips
-
-
-Admin can add new tips
-
-
-
-🎨 11. UI/UX Improvements
-
-
-Fully responsive design
-
-
-Card-based layout system
-
-
-Hover effects and animations
-
-
-Clean navigation bar
-
-
-Role-based menu display
-
-
-Consistent color theme
-
-
-
+Display tips
+Admin can add tips
+🎨 UI/UX Improvements
+Responsive design
+Card-based layout
+Hover effects
+Clean navigation
+Role-based menus
 🛠️ Tech Stack
-
-
-React (Vite) – Frontend framework
-
-
-JavaScript (ES6+) – Logic
-
-
-CSS (Custom Styling) – UI design
-
-
-React Router DOM – Routing
-
-
-Fetch API – Backend communication
-
-
-
+React (Vite)
+JavaScript (ES6+)
+CSS (Custom Styling)
+React Router DOM
+Fetch API
 📂 Folder Structure
-src/ ├── components/ │    ├── Navbar.jsx │    ├── ProtectedRoute.jsx │    ├── WeatherCard.jsx │    ├── TipCard.jsx │    ├── ProblemCard.jsx │ ├── pages/ │    ├── Home.jsx │    ├── Login.jsx │    ├── Register.jsx │    ├── ForgotPassword.jsx │    ├── FarmerDashboard.jsx │    ├── ExpertDashboard.jsx │    ├── AdminDashboard.jsx │    ├── Problems.jsx │    ├── ProblemDetails.jsx │    ├── UploadProblem.jsx │    ├── WeatherPage.jsx │    ├── TipsPage.jsx │ ├── services/ │    └── api.js │ ├── App.jsx ├── main.jsx ├── index.css
-
+src/
+ ├── components/   → reusable UI components
+ ├── pages/        → application pages
+ ├── services/     → API calls
+ ├── App.jsx       → routing
+ ├── main.jsx      → entry point
+ ├── index.css     → global styles
 ⚙️ Installation & Setup Guide
 1. Clone Repository
-git clone https://github.com/Jeetman07/Mount_Makalu.gitcd agriculture-support-frontend
+git clone https://github.com/Jeetman07/Mount_Makalu.git
 
+cd Mount_Makalu/agriculture-support-frontend
 2. Install Dependencies
 npm install
-
 3. Start Frontend
 npm run dev
-
 4. Open in Browser
 http://localhost:5173
-
+⚠️ Important Notes
+This runs on local development server
+localhost:5173 works only on your machine
+Backend must be running for full functionality
 🔗 Backend Requirement
-Frontend requires backend server to be running.
-Start Backend:
+
+Start backend separately:
+
 python app.py
+
 Backend runs on:
+
 http://127.0.0.1:5000
+🌟 Key Highlights
+✅ Role-based dashboards
+✅ Fully functional problem system
+✅ API integration (no mock data)
+✅ Search & filter functionality
+✅ Clickable UI cards
+✅ Protected routes
+✅ Dynamic weather and tips
+🖼️ Screenshots (Add Your Images)
 
 📊 Current Status
-
-
-UI design completed ✅
-
-
-Backend integration completed ✅
-
-
-Authentication system working ✅
-
-
-Role-based dashboards working ✅
-
-
-Problem system fully functional ✅
-
-
+UI completed ✅
+Backend integrated ✅
+Authentication working ✅
+Dashboards functional ✅
+Problem system complete ✅
 Weather & tips dynamic ✅
 
 
-Search & filter implemented ✅
+✍️ Reflection
 
+This project helped me to:
 
-Protected routes implemented ✅
-
-
-
-📌 Notes
-
-
-This repository contains frontend only
-
-
-Backend is handled by another team member
-
-
-No mock data is used (fully API-based)
-
-
-Designed for academic project submission
-
-✍️ Reflection (Frontend Developer)
-During this project, I learned:
-
-Building scalable UI using React
-
-Implementing role-based authentication
-
-Working with REST APIs
-
-Designing responsive dashboards
-
-Improving UI/UX for real users
-
-
-
+Build a complete frontend using React
+Implement role-based authentication
+Work with real backend APIs
+Design responsive dashboards
+Improve UI/UX skills
