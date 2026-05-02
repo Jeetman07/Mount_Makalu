@@ -1,6 +1,6 @@
 # 🌾 Agriculture Support System – Frontend  
 ### 👨‍💻 Developed by: Amar Kathayat
-### Frontend maintained by Amar Kathayat
+Frontend maintained by Amar Kathayat
 
 ---
 
