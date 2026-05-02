@@ -12,7 +12,7 @@ The Agriculture Support System is a web-based platform that allows farmers to:
 - View weather updates  
 - Access agricultural tips  
 
-This repository contains the **frontend implementation**, built using **React (Vite)** with full API integration and role-based functionality.
+This repository contains the frontend implementation built using React (Vite) with API integration and role-based functionality.
 
 ---
 
@@ -25,80 +25,54 @@ This repository contains the **frontend implementation**, built using **React (V
 
 ---
 
-## 👥 User Roles & Features
+## 👥 User Roles
 
 ### 👨‍🌾 Farmer
-- Upload crop problems  
-- View own submitted problems  
-- Track problem status (Pending / Solved)  
-- View weather updates  
-- Read agricultural tips  
-
----
+- Upload problems  
+- View own problems  
+- Track status (Pending / Solved)  
+- View weather  
+- View tips  
 
 ### 👨‍🔬 Expert
 - View all problems  
-- Respond to farmer problems  
-- Automatically mark problems as "Solved"  
-
----
+- Respond to problems  
 
 ### 👨‍💼 Admin
 - View all problems  
-- Add crop tips  
-- Add weather data  
-- Monitor system statistics  
+- Add tips  
+- Add weather  
 
 ---
 
-## 🚀 Features Implemented
+## 🚀 Features
 
 ### 🔐 Authentication
-- Login with role selection  
-- Register with OTP verification  
-- Forgot password UI  
-- Local storage session management  
-
----
+- Login & Register  
+- OTP verification  
+- Protected routes  
 
 ### 📋 Problem Management
 - View all problems  
-- Search functionality  
-- Filter by status (Pending / Solved)  
+- Search problems  
+- Filter by status  
 - Clickable cards  
 - Problem details page  
 - Response system  
 
----
-
-### 📄 Problem Details Page
-- Full problem information  
-- Display responses  
-- Show "No responses yet" message  
-- Submit response form  
-
----
-
 ### 🌦️ Weather System
-- Fetch weather data from backend  
-- View weather by location  
-- Admin can add weather  
-
----
+- View weather data  
+- Add weather (Admin)  
 
 ### 💡 Tips System
-- Fetch tips from backend  
-- Display agricultural tips  
-- Admin can add tips  
+- View tips  
+- Add tips (Admin)  
 
----
-
-### 🎨 UI/UX Improvements
+### 🎨 UI Improvements
 - Responsive design  
-- Card-based layout  
+- Card layout  
 - Hover effects  
 - Clean navigation  
-- Role-based menus  
 
 ---
 
@@ -106,15 +80,57 @@ This repository contains the **frontend implementation**, built using **React (V
 
 - React (Vite)  
 - JavaScript (ES6+)  
-- CSS (Custom Styling)  
+- CSS  
 - React Router DOM  
 - Fetch API  
 
 ---
 
-## ⚙️ Installation & Setup Guide
+## ⚙️ Installation & Setup
 
 ### 1. Clone Repository
-```bash
-git clone https://github.com/Jeetman07/Mount_Makalu.git
-cd Mount_Makalu/agriculture-support-frontend
+git clone https://github.com/Jeetman07/Mount_Makalu.git  
+cd Mount_Makalu/agriculture-support-frontend  
+
+### 2. Install Dependencies
+npm install  
+
+### 3. Run Frontend
+npm run dev  
+
+### 4. Open in Browser
+http://localhost:5173  
+
+---
+
+## 🔗 Backend Requirement
+
+Make sure backend is running:
+
+python app.py  
+
+Backend runs on:  
+http://127.0.0.1:5000  
+
+---
+
+## 🌟 Key Highlights
+
+- Role-based dashboards  
+- Full API integration  
+- Search & filter functionality  
+- Clickable UI cards  
+- Protected routes  
+- Dynamic weather & tips  
+
+---
+
+
+## ✍️ Reflection
+
+- Learned React project structure  
+- Implemented role-based UI  
+- Integrated frontend with backend APIs  
+- Improved UI/UX design skills  
+
+---
