@@ -1,7 +1,5 @@
-
-
 # 🌾 Agriculture Support System API
-
+### Developed by Purushottam Adhikari
 A lightweight, Flask-based backend designed to bridge the gap between farmers and agricultural experts. This system handles secure user authentication, problem reporting with image support, and real-time agricultural data.
 
 ## 🚀 Key Features
