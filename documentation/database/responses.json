@@ -1,0 +1,18 @@
+[
+    {
+        "response_id": "7cdca4d7-b09a-4799-968c-34b1e8ab5192",
+        "problem_id": "f3a06668-2f11-4ed6-9f37-17eefa28ef2f",
+        "responder_id": "expert-001",
+        "responder_name": "Amar",
+        "message": "Apply fertilizer and ensure proper irrigation.",
+        "created_at": "2026-04-23 14:05:07.111731"
+    },
+    {
+        "response_id": "4bf8510c-68b2-4a78-b71b-575c8ed9f309",
+        "problem_id": "06f53a2e-82ef-4dca-b1ff-5139ec432cd3",
+        "responder_id": "f6d517f8-b410-4066-b907-288848e53fa8",
+        "responder_name": "Riksha Ghimire",
+        "message": "Yellowing of leaves usually indicates nutrient deficiency, especially nitrogen. Try using a balanced fertilizer and check soil moisture levels.",
+        "created_at": "2026-05-01 14:03:20.128756"
+    }
+]

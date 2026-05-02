@@ -1,0 +1,12 @@
+[
+    {
+        "id": "9839286e-3e92-4e91-ae02-671492711a14",
+        "email": "amarkathayat697@gmail.com",
+        "name": "Amar Kathayat",
+        "password": "scrypt:32768:8:1$fWIMxllkVeOICC4f$1c36dace5b2b643f50a68c78e3ae430e5910aadba47107cd158075a94927eb22c552bf023f60a24378c068c967177d2cf49fee6d70bc5e850e24ddea20d11d24",
+        "role": "farmer",
+        "created_at": "2026-04-26 11:08:44.923694",
+        "phone": "0451522787",
+        "location": "Espoo"
+    }
+]
