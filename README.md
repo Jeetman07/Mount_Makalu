@@ -176,4 +176,12 @@ http://localhost:5173
 - Learned React project structure and routing  
 - Implemented role-based UI  
 - Integrated frontend with backend APIs  
-- Improved UI/UX design and responsiveness  
+- Improved UI/UX design and responsiveness
+
+## 📝 Note on Commits
+
+I made commits during different stages of development (6 April, 13 April, and 27 April) while building the frontend.
+
+However, during later stages of the project, branch renaming, rebasing, and integration changes caused earlier commit history to be squashed or reorganized. As a result, some commits no longer appear individually in the contribution timeline and instead show as grouped updates.
+
+Despite this, the development work was performed continuously across the project timeline.
