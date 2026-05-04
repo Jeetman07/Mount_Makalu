@@ -1,119 +1,179 @@
-🌾 Agriculture Support System – Frontend
-👨‍💻 Developed by : Amar Kathayat
+# 🌾 Agriculture Support System – Frontend
 
-📌 Project Overview
+## 👨‍💻 Developed by
+Amar Kathayat
 
-The Agriculture Support System is a web-based platform designed to help farmers by allowing them to:
+---
 
-Submit crop-related problems
-Receive responses from experts or admins
-View weather updates
-Access useful agricultural tips
+## 📌 Project Overview
 
-This repository contains the frontend implementation, built using React (Vite) with full API integration and role-based functionality.
+The Agriculture Support System is a web-based application designed to help farmers by allowing them to:
 
-🎯 Purpose of Frontend
-Provide a clean and user-friendly interface
-Support multiple user roles (Farmer, Expert, Admin)
-Display real-time data from backend APIs
-Enable smooth interaction between users
+- Submit crop-related problems  
+- Receive responses from experts or admins  
+- View weather updates  
+- Access useful agricultural tips  
 
-👥 User Roles & Features
+This repository contains the frontend implementation built using React (Vite) with API integration and role-based functionality.
 
-👨‍🌾 Farmer dashboard
-Upload crop problems
-View own problems
-Check weather updates
-View agricultural tips
+---
 
-👨‍🔬 Expert Dashboard
-View all problems
-Respond to problems
-Status auto-updated to “Solved”
-Dashboard statistics
+## 🎯 Purpose of Frontend
 
-👨‍💼 Admin Dashboard
-Add crop tips
-Add weather data
-View all problems
-System statistics
+- Provide a clean and user-friendly interface  
+- Support multiple user roles (Farmer, Expert, Admin)  
+- Display real-time data from backend APIs  
+- Enable smooth interaction between users  
 
-📋 Problem Management
-View all problems
-Search functionality
-Filter by status
-Clickable cards
-Problem details page
-Response system
+---
 
-📄 Problem Details Page
-Full problem information
-Display responses
-“No responses yet” message
-Submit response form
+## 👥 User Roles & Features
 
-🌦️ Weather System
-Fetch weather data from backend
-View by location
-Admin can add weather
+### 👨‍🌾 Farmer
+- Upload crop problems  
+- View submitted problems  
+- Check weather updates  
+- View agricultural tips  
 
-💡 Tips System
-Fetch tips from backend
-Display tips
-Admin can add tips
+### 👨‍🔬 Expert
+- View all problems  
+- Respond to farmer issues  
+- Update problem status  
 
-🎨 UI/UX Improvements
-Responsive design
-Card-based layout
-Hover effects
-Clean navigation
-Role-based menus
+### 👨‍💼 Admin
+- Manage problems  
+- Add crop tips  
+- Add weather data  
+- View system statistics  
 
-🛠️ Tech Stack
-React (Vite)
-JavaScript (ES6+)
-CSS (Custom Styling)
-React Router DOM
-Fetch API
+---
 
-📂 Folder Structure
+## 🚀 Features Implemented
 
-src/
- ├── components/   → reusable UI components
- ├── pages/        → application pages
- ├── services/     → API calls
- ├── App.jsx       → routing
- ├── main.jsx      → entry point
- ├── index.css     → global styles
+### 🔐 Authentication
+- Login page  
+- Register page  
+- Forgot password UI  
+- Local storage session handling  
 
- ⚙️ Installation & Setup Guide
-1. Clone Repository
-git clone https://github.com/Jeetman07/Mount_Makalu.git
+### 🔒 Protected Routes
+- Role-based access control  
+- Unauthorized users redirected automatically  
 
-cd Mount_Makalu/agriculture-support-frontend
+### 🏠 Home Page
+- Landing page with system overview  
+- Navigation to dashboards  
 
-2. Install Dependencies
-   npm install
-   
-4. Start Frontend
-   npm run dev
+### 📊 Dashboards
+- Farmer dashboard  
+- Expert dashboard  
+- Admin dashboard  
 
+### 🧾 Problem Management
+- View all problems  
+- Search functionality  
+- Filter by status (Pending / Solved)  
+- Clickable problem cards  
+- Problem details page  
+- Response system  
 
-🌟 Key Highlights
-✅ Role-based dashboards
-✅ Fully functional problem system
-✅ API integration (no mock data)
-✅ Search & filter functionality
-✅ Clickable UI cards
-✅ Protected routes
-✅ Dynamic weather and tips
+### 🌦️ Weather System
+- Fetch weather data from backend  
+- View weather by location  
+- Admin can add weather data  
 
-✍️ Reflection
+### 💡 Tips System
+- Fetch tips from backend  
+- Display agricultural tips  
+- Admin can add tips  
 
-This project helped me to:
+### 🎨 UI/UX Improvements
+- Responsive design  
+- Card-based layout  
+- Hover effects  
+- Clean navigation  
+- Role-based menus  
 
-Build a complete frontend using React
-Implement role-based authentication
-Work with real backend APIs
-Design responsive dashboards
-Improve UI/UX skills
+---
+
+## 🛠️ Tech Stack
+
+- React (Vite)  
+- JavaScript (ES6+)  
+- CSS (Custom Styling)  
+- React Router DOM  
+- Fetch API  
+
+---
+
+## 📁 Folder Structure
+
+src/  
+ ├── components/ → reusable UI components  
+ ├── pages/ → application pages  
+ ├── services/ → API calls  
+ ├── App.jsx → routing  
+ ├── main.jsx → entry point  
+ └── index.css → global styles  
+
+---
+
+## ⚙️ Installation & Setup Guide
+
+### 1. Install Node.js  
+https://nodejs.org/
+
+Check:
+node -v  
+npm -v  
+
+### 2. Clone Repository  
+git clone https://github.com/Jeetman07/Mount_Makalu.git  
+cd agriculture-support-frontend 
+
+### 3. Switch to Frontend Branch  
+git checkout frontend-design  
+
+### 4. Install Dependencies  
+npm install  
+
+### 5. Run Frontend  
+npm run dev  
+
+### 6. Open in Browser  
+http://localhost:5173  
+
+---
+
+## 🔗 Backend Requirement
+
+Frontend requires backend server to fetch data (API calls).
+
+Start backend:
+python app.py
+
+Backend API runs on:
+http://127.0.0.1:5000
+
+Frontend runs on:
+http://localhost:5173  
+
+---
+
+## 🌟 Key Highlights
+
+- Role-based dashboards  
+- Full API integration  
+- Search & filter functionality  
+- Clickable UI cards  
+- Protected routes  
+- Dynamic weather & tips  
+
+---
+
+## ✍️ Reflection
+
+- Learned React project structure and routing  
+- Implemented role-based UI  
+- Integrated frontend with backend APIs  
+- Improved UI/UX design and responsiveness  
